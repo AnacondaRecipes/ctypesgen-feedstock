@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/davidjamesca/ctypesgen/archive/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/ctypesgen/ctypesgen/archive/{{ name }}-{{ version }}.tar.gz
   sha256: 409ff3984ecf2aef09008045a713d61031990e95834074bff27957430223b729
 
 build:
@@ -33,9 +33,9 @@ test:
     - ctypesgen --help
 
 about:
-  home: https://github.com/davidjamesca/ctypesgen/
-  dev_url: https://github.com/davidjamesca/ctypesgen.git
-  doc_url: https://github.com/davidjamesca/ctypesgen/wiki
+  home: https://github.com/ctypesgen/ctypesgen
+  dev_url: https://github.com/ctypesgen/ctypesgen.git
+  doc_url: https://github.com/ctypesgen/ctypesgen
   license: BSD-2-Clause
   license_file: LICENSE
   summary: Python wrapper generator for ctypes
