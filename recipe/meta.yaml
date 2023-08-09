@@ -1,42 +1,46 @@
 {% set name = "ctypesgen" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/davidjamesca/ctypesgen/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 409ff3984ecf2aef09008045a713d61031990e95834074bff27957430223b729
+  url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: deaa2d64a95d90196a2e8a689cf9b952be6f3366f81e835245354bf9dbac92f6
 
 build:
   entry_points:
     - ctypesgen = ctypesgen.main:main
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python
     - setuptools
+    - setuptools_scm >=3.4.3
+    - wheel
   run:
-    - python >=2.7
+    - python
 
 test:
+  imports:
+    - ctypesgen
   requires:
     - pip
   commands:
-    - python -m pip check
+    - pip check
     - ctypesgen --help
 
 about:
-  home: https://github.com/davidjamesca/ctypesgen/
-  dev_url: https://github.com/davidjamesca/ctypesgen.git
-  doc_url: https://github.com/davidjamesca/ctypesgen/wiki
+  home: https://github.com/ctypesgen/ctypesgen
+  dev_url: https://github.com/ctypesgen/ctypesgen.git
+  doc_url: https://github.com/ctypesgen/ctypesgen
   license: BSD-2-Clause
   license_file: LICENSE
+  license_family: BSD
   summary: Python wrapper generator for ctypes
   description:
     ctypesgen reads parses c header files and creates a wrapper for
