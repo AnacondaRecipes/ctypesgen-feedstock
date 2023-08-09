@@ -14,21 +14,22 @@ build:
     - ctypesgen = ctypesgen.main:main
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python
     - setuptools
+    - wheel
   run:
-    - python >=2.7
+    - python
 
 test:
   requires:
     - pip
   commands:
-    - python -m pip check
+    - pip check
     - ctypesgen --help
 
 about:
