@@ -1,13 +1,13 @@
 {% set name = "ctypesgen" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ctypesgen/ctypesgen/archive/{{ name }}-{{ version }}.tar.gz
-  sha256: 409ff3984ecf2aef09008045a713d61031990e95834074bff27957430223b729
+  url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: deaa2d64a95d90196a2e8a689cf9b952be6f3366f81e835245354bf9dbac92f6
 
 build:
   entry_points:
