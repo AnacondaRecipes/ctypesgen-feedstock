@@ -25,6 +25,8 @@ requirements:
     - python
 
 test:
+  imports:
+    - ctypesgen
   requires:
     - pip
   commands:
@@ -37,6 +39,7 @@ about:
   doc_url: https://github.com/ctypesgen/ctypesgen
   license: BSD-2-Clause
   license_file: LICENSE
+  license_family: BSD
   summary: Python wrapper generator for ctypes
   description:
     ctypesgen reads parses c header files and creates a wrapper for
